@@ -14,7 +14,7 @@ class PostController extends Controller
 
     public function addPost(Request $request){
         $post = new Post;
-        $post->content = $request->content;
+        $post->content = $this->cryptMessage($request->content, $request->decalage);
         $post->decalage = $request->decalage;
         $post->save();
         return redirect()->route('home');
