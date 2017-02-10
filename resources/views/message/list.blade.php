@@ -6,8 +6,10 @@
   <ul>
 
     @foreach($posts as $post)
-      <li>{{$post->content}}</li>
+      <a href="/show/{{$post->id}}"><li>{{$post->content}}</li></a>
     @endforeach
 
   </ul>
+
+  <a href="add/post">Ajouter un message secret</a>
 @stop

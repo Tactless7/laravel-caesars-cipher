@@ -11,4 +11,10 @@
 |
 */
 
-Route::get('/', 'PostController@list');
+Route::get('/', 'PostController@list')->name('home');
+Route::get('/add/post', function(){
+  return view('message.add');
+});
+Route::post('/add/post', 'PostController@addPost');
+
+Route::get('/show/{id}', 'PostController@cryptList');
